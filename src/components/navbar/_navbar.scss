@@ -1,0 +1,39 @@
+.nav {
+  background-color: $verdeAguaClaro;
+  @include flex(row, nowrap, space-around, center);
+  height: 3rem;
+  font-size: 1.3rem;
+
+  .brand {
+    @include flex(row, nowrap, auto, auto);
+    svg {
+      width: 20px;
+    }
+  }
+
+  .pages {
+    @include flex(row, nowrap, auto, center);
+
+    li {
+      margin: 0 5px;
+      a {
+        padding: 7px 12px;
+        &:hover {
+          background-color: $verdeAguaMedio;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: $verdeAguaOscuro;
+    padding: 5px 10px;
+    border-radius: 50px;
+  }
+
+  .cart{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
