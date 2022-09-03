@@ -1,0 +1,30 @@
+.counter{
+    @include flex (row, nowrap, center, center);
+    padding: 5px;
+    width: 100%t;
+
+    .minus{
+        width: 20px;
+        color: red;
+        cursor: pointer;
+    }
+
+    .plus{
+        width: 20px;
+        color: green;
+        cursor: pointer;
+    }
+
+    .numberCount{
+        margin: 0 30px;
+    }
+}
+
+
+.addToCart{
+    margin:10px  auto;
+    background-color: aquamarine;
+    padding: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+}

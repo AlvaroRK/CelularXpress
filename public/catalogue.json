@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S20 FE",
+    "price": 126.999,
+    "stock": 14,
+    "desc": "alto celu",
+    "img": "../assets/img/S20 FE.png"
+  },
+  {
+    "id": 2,
+    "brand": "Samsung",
+    "name": "Samsung Galaxy S22 Ultra",
+    "price": 309.999,
+    "stock": 10,
+    "desc": "alto celu",
+    "img": "../assets/img/S22 Ultra.png"
+  },
+  {
+    "id": 3,
+    "brand": "Motorola",
+    "name": "Moto G60s",
+    "price": 79.999,
+    "stock": 21,
+    "desc": "alto celu",
+    "img": "../assets/img/Moto G60s.png"
+  },
+  {
+    "id": 4,
+    "brand": "Motorola",
+    "name": "Moto E20",
+    "price": 49.999,
+    "stock": 19,
+    "desc": "alto celu",
+    "img": "../assets/img/Moto E20.png"
+  },
+  {
+    "id": 5,
+    "brand": "Iphone",
+    "name": "Iphone 13 Pro Max",
+    "price": 389.999,
+    "stock": 6,
+    "desc": "alto celu",
+    "img": "../assets/img/Iphone 13 Pro Max.png"
+  },
+  {
+    "id": 6,
+    "brand": "Iphone",
+    "name": "Iphone 11 Pro",
+    "price": 180.999,
+    "stock": 13,
+    "desc": "alto celu",
+    "img": "../assets/img/Iphone 11 Pro.png"
+  }
+]

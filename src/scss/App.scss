@@ -1,0 +1,13 @@
+@import "./utils/variables";
+@import "./utils/mixin";
+
+@import "./base/reset";
+
+@import "./styled-components/itemCount";
+@import "./styled-components/Item";
+
+@import "./layout/navbar";
+
+body{
+    background-color: rgb(240, 240, 240);
+}
