@@ -1,7 +1,7 @@
 .counter{
     @include flex (row, nowrap, center, center);
     padding: 5px;
-    width: 100%t;
+    width: 100%;
 
     .minus{
         width: 20px;

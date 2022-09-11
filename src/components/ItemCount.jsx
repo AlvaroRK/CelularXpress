@@ -15,7 +15,7 @@ const ItemCount = ({ stock, initial }) => {
     }
   };
 
-  if (counter == stock) {
+  if (counter === stock) {
     console.log("stock maximo");
   }
 

@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "brand": "Samsung",
+        "name": " Galaxy S20 FE",
+        "price": 126.999,
+        "stock": 14,
+        "desc": "alto celu",
+        "img": "../assets/img/S20 FE.png"
+      },
+      {
+        "id": 2,
+        "brand": "Motorola",
+        "name": "Moto G60s",
+        "price": 79.999,
+        "stock": 21,
+        "desc": "alto celu",
+        "img": "../assets/img/Moto G60s.png"
+      },
+      {
+        "id": 3,
+        "brand": "Iphone",
+        "name": "Iphone 13 Pro Max",
+        "price": 389.999,
+        "stock": 6,
+        "desc": "alto celu",
+        "img": "../assets/img/Iphone 13 Pro Max.png"
+      }
+]

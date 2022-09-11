@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <>
-      <h2>Contact me</h2>
+      <h2>ESTAS EN LA SECCION DE CONTACTO</h2>
       <form action="">
         <input type="text" placeholder="text" />
         <input type="email" placeholder="email" />

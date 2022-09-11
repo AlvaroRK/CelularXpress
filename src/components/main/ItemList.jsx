@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import Item from "./Item";
 
 const ItemList = ({ prod }) => {
   return (
     <>
       {prod.map((product) => (
-        <Item key={product.id} {...product} />
+        <Link to={`/products/item/${product.id}`} key={product.id} className="card">
+          <Item {...product} />
+        </Link>
       ))}
     </>
   );

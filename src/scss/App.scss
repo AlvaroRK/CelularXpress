@@ -3,10 +3,14 @@
 
 @import "./base/reset";
 
+@import "./styled-components/categoryItem";
+@import "./styled-components/filter";
+@import "./styled-components/item";
 @import "./styled-components/itemCount";
-@import "./styled-components/Item";
+@import "./styled-components/itemDetail";
 
 @import "./layout/navbar";
+@import "./layout/footer";
 
 body{
     background-color: rgb(240, 240, 240);

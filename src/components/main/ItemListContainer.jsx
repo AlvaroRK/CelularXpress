@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ItemCount from "../ItemCount";
+import Filter from "./Filter";
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -26,9 +26,11 @@ const ItemListContainer = () => {
   };
   return (
     <div>
-      <ItemCount stock={5} initial={1} />
       <div className="cardsContainer">
-        <ItemList prod={prod} />
+        <Filter />
+        <div className="cards">
+          <ItemList prod={prod} />
+        </div>
       </div>
     </div>
   );

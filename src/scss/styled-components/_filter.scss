@@ -1,0 +1,31 @@
+.filterContainer{
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+    width: 20%;
+
+    h2{
+        text-align: center;
+    }
+
+    h2,h3{
+        margin: 15px 0;
+        font-weight: bold;
+    }
+    .filter-price{
+        @include flex (row, nowrap, space-around, center);
+
+        input{
+            width: 84px;
+            height: 25px;
+            margin: 0 5px;
+            background-color: aliceblue;
+            outline: none;
+            text-align: center;
+        }
+
+        button, svg{
+            width: 25px;
+            background-color: aliceblue;
+        }
+    }
+}

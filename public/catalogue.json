@@ -1,56 +1,93 @@
 [
   {
     "id": 1,
-    "brand": "Samsung",
-    "name": "Samsung Galaxy S20 FE",
+    "brand": "samsung",
+    "slug":"samsung",
+    "name": " Galaxy S20 FE",
     "price": 126.999,
     "stock": 14,
-    "desc": "alto celu",
-    "img": "../assets/img/S20 FE.png"
+    "desc": "El Samsung Galaxy S20 Fan Edition (Galaxy S20 FE) es un teléfono inteligente Android diseñado, desarrollado, comercializado y fabricado por Samsung Electronics como parte de la serie Galaxy S. Fue anunciado en el evento Galaxy Unpacked de Samsung el 23 de septiembre de 2020 como una variante de menos costo del Galaxy S20.",
+    "ram": "6 GB",
+    "almacenamiento": "128 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/S20%20FE.png"
   },
   {
     "id": 2,
-    "brand": "Samsung",
-    "name": "Samsung Galaxy S22 Ultra",
-    "price": 309.999,
+    "brand": "samsung",
+    "slug":"samsung",
+    "name": "Galaxy S22 Ultra",
+    "price": 261.999,
     "stock": 10,
-    "desc": "alto celu",
-    "img": "../assets/img/S22 Ultra.png"
+    "desc": "Conocé el Galaxy S22 Ultra, con el poder de Note. El marco pulido, delgado y audaz, rodea la forma extruida para lograr una simetría elegante. Y la cámara lineal, acentuada por anillos de lentes espejados, parece flotar en su lugar.",
+    "ram": "8 GB",
+    "almacenamiento": "128 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/S22%20Ultra.png"
   },
   {
     "id": 3,
-    "brand": "Motorola",
+    "brand": "motorola",
+    "slug":"motorola",
     "name": "Moto G60s",
-    "price": 79.999,
+    "price": 75.299,
     "stock": 21,
-    "desc": "alto celu",
-    "img": "../assets/img/Moto G60s.png"
+    "desc": "Con su potente procesador y memoria RAM de 6 GB tu equipo alcanzará un alto rendimiento con gran velocidad de transmisión de contenidos y ejecutará múltiples aplicaciones a la vez sin demoras.",
+    "ram": "6 GB",
+    "almacenamiento": "128 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/Moto%20G60s.png"
   },
   {
     "id": 4,
-    "brand": "Motorola",
+    "brand": "motorola",
     "name": "Moto E20",
-    "price": 49.999,
+    "price": 38.639,
     "stock": 19,
-    "desc": "alto celu",
-    "img": "../assets/img/Moto E20.png"
+    "desc": "Su memoria RAM de 2 GB es justo lo que necesitás para utilizar las funciones más importantes como llamar, enviar mensajes, navegar y ejecutar aplicaciones de uso frecuente como redes sociales o multimedia.",
+    "ram": "2 GB",
+    "almacenamiento": "32 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/Moto%20E20.png"
   },
   {
     "id": 5,
-    "brand": "Iphone",
+    "brand": "iphone",
     "name": "Iphone 13 Pro Max",
-    "price": 389.999,
+    "price": 517.999,
     "stock": 6,
-    "desc": "alto celu",
-    "img": "../assets/img/Iphone 13 Pro Max.png"
+    "desc": "iPhone 13 Pro Max. El mayor avance en el sistema de cámaras Pro hasta ahora. Pantalla Super Retina XDR con ProMotion que brinda una respuesta más rápida y fluida. Chip A15 Bionic para un rendimiento fuera de serie. Diseño resistente y la mayor duración de batería jamás vista en un iPhone.",
+    "ram": "6 GB",
+    "almacenamiento": "256 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/Iphone%2013%20Pro%20Max.png"
   },
   {
     "id": 6,
-    "brand": "Iphone",
+    "brand": "iphone",
     "name": "Iphone 11 Pro",
-    "price": 180.999,
+    "price": 239.999,
+    "stock": 13,
+    "desc": "Graba videos 4K y captura retratos espectaculares y paisajes increíbles con el sistema de dos cámaras. Toma grandes fotos con poca luz gracias al modo Noche. Disfruta colores reales en las fotos, videos y juegos con la pantalla Liquid Retina de 6.1 pulgadas. Aprovecha un rendimiento sin precedentes en los juegos, la realidad aumentada y la fotografía con el chip A13 Bionic.",
+    "ram": "4 GB",
+    "almacenamiento": "128 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/Iphone%2011%20Pro.png"
+  },
+  {
+    "id": 7,
+    "brand": "huawei",
+    "name": "Huawei P30 Pro",
+    "price": 427.404,
+    "stock": 13,
+    "desc": "Con su potente procesador y memoria RAM de 8 GB tu equipo alcanzará un alto rendimiento con gran velocidad de transmisión de contenidos y ejecutará múltiples aplicaciones a la vez sin demoras.",
+    "ram": "8 GB",
+    "almacenamiento": "256 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/P30%20Pro.png"
+  },
+  {
+    "id": 8,
+    "brand": "huawei",
+    "name": "Huawei P40 Pro",
+    "price": 474.999,
     "stock": 13,
     "desc": "alto celu",
-    "img": "../assets/img/Iphone 11 Pro.png"
+    "ram": "8 GB",
+    "almacenamiento": "256 GB",
+    "img": "http://127.0.0.1:5500/public/assets/img/P40%20Pro.png"
   }
 ]

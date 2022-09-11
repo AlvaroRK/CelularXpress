@@ -1,0 +1,62 @@
+.cardDetailContainer {
+  @include flex(column, nowrap, center, center);
+  height: calc(100% - 4rem);
+  padding: 20px 0;
+  .cardDetail {
+    padding: 10px 0px;
+    height: 60%;
+    width: 80%;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px 5px lightgray;
+    border-radius: 10px;
+
+    @include media() {
+      width: 60%;
+      @include flex(row, wrap, space-evenly, center);
+    }
+    img {
+      margin: auto;
+      object-fit: contain;
+      height: 500px;
+
+      @include media() {
+        object-fit: contain;
+        width: 33.33%;
+      }
+    }
+
+    .description{
+        margin:10px;
+    }
+    .detail {
+      padding: 20px 0;
+
+      @include media() {
+        @include flex(column, nowrap, center, center);
+        height: 50vh;
+        width: 33.33%;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+      }
+      h2 {
+        text-align: center;
+        font-weight: 600;
+      }
+      li {
+        padding: 10px;
+        margin: 5px auto;
+        width: max-content;
+        border: 1px solid black;
+        border-radius: 20px;
+      }
+    }
+    .price {
+      @include media() {
+        width: 33.33%;
+      }
+      li {
+        text-align: center;
+      }
+    }
+  }
+}

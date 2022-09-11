@@ -1,39 +1,69 @@
-.nav {
-  background-color: $verdeAguaClaro;
+.header {
   @include flex(row, nowrap, space-around, center);
-  height: 3rem;
-  font-size: 1.3rem;
+  background-color: $verdeAguaClaro;
+  height: 4rem;
+  z-index: 100;
 
+  @include media(){
+    z-index: 0;
+  }
   .brand {
-    @include flex(row, nowrap, auto, auto);
-    svg {
-      width: 20px;
+    font-size: 26px;
+  }
+
+  svg{
+    width: 27px;
+  }
+  .button{
+    @include media(){
+      display: none;
     }
   }
 
-  .pages {
-    @include flex(row, nowrap, auto, center);
+  .nav {
+    background-color: $verdeAguaClaro;
+    font-size: 1.3rem;
+    top: 4rem;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: all .2s;
+    transform: translateY(-100rem);
 
-    li {
-      margin: 0 5px;
-      a {
-        padding: 7px 12px;
-        &:hover {
-          background-color: $verdeAguaMedio;
-          border-radius: 50px;
+    &-active {
+      transition: all .2s;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @include media(){
+      background: none;
+      transition: none;
+      top: 0;
+      opacity: 1;
+      position: relative;
+      width: auto;
+      transform: translateY(0)
+    }
+
+    .pages {
+      @include flex(column, nowrap, space-between, center);
+
+      @include media(){
+        @include flex(row, nowrap, space-between, center)
+      }
+
+      li {
+        margin: 1.5rem 0;
+        a {
+          padding: 7px 12px;
+          width: 100%;
+          &:hover {
+            background-color: $verdeAguaMedio;
+            border-radius: 50px;
+          }
         }
       }
     }
-  }
-
-  button {
-    background-color: $verdeAguaOscuro;
-    padding: 5px 10px;
-    border-radius: 50px;
-  }
-
-  .cart{
-    display: flex;
-    flex-wrap: nowrap;
   }
 }
