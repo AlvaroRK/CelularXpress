@@ -13,16 +13,14 @@ const ItemListContainer = () => {
     console.log("cargando...");
   }, []);
 
-  const obtenerCatalogo = async () => {
-    try {
-      const response = await fetch(
-        "http://127.0.0.1:5500/public/catalogue.json"
-      );
-      const data = await response.json();
-      setProd(data);
-    } catch (error) {
-      console.log("hay un error");
-    }
+  const obtenerCatalogo = () => {
+    const URL = `http://127.0.0.1:5500/public/catalogue.json`;
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setProd(data)
+      });
   };
   return (
     <div>

@@ -4,7 +4,7 @@ import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  const [item, setItem] = useState({});
+  const [items, setItems] = useState({});
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,12 +18,12 @@ const ItemDetailContainer = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.find((i) => i.id == id));
-        setItem(data.find((i) => i.id == id));
+        setItems(data.find((i) => i.id == id));
       });
   };
   return (
     <div className="cardDetailContainer">
-      <ItemDetail item={item} />
+      <ItemDetail items={items} />
     </div>
   );
 };

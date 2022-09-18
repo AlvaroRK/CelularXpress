@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ qty, item, stock, initial, addItem }) => {
   const [counter, setCounter] = useState(initial);
 
   const minusClick = () => {
@@ -27,7 +27,7 @@ const ItemCount = ({ stock, initial }) => {
             <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
           </svg>
         </button>
-        <p type="text" value={counter} className="numberCount">
+        <p value={counter} className="numberCount">
           {counter}/{stock}
         </p>
         <button onClick={plusClick} className="plus">
@@ -36,7 +36,9 @@ const ItemCount = ({ stock, initial }) => {
           </svg>
         </button>
       </div>
-      <button className="addToCart">Añadir al carrito</button>
+      <button className="addToCart" onClick={() => addItem(item, qty)}>
+        Add to Cart
+      </button>
     </>
   );
 };

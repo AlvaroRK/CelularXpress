@@ -24,7 +24,9 @@ const NavBar = () => {
         </ul>
       </nav>
       <div className="cart">
-        <CartWidget />
+        <Link to={"/cart"}>
+          <CartWidget />
+        </Link>
       </div>
       <button className="button">
         <svg id="hamb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

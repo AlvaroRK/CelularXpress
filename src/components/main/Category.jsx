@@ -17,8 +17,8 @@ const Category = () => {
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.filter((i) => i.slug == slug));
-        setSlugs(data.filter((i) => i.slug == slug));
+        console.log(data.filter((i) => i.slug === slug));
+        setSlugs(data.filter((i) => i.slug === slug));
       });
   };
   return (

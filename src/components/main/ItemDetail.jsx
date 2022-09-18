@@ -1,19 +1,35 @@
+import { useContext } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount";
 
-const ItemDetail = ({ item:{ img, name, ram, almacenamiento, price, stock, desc} }) => {
+const ItemDetail = ({ items, item }) => {
+  const [add, setAdd] = useState(false);
+  console.log(setAdd);
+
+  const { addItem } = useContext(CartContext);
+
   return (
     <div className="cardDetail">
-        <img src={img} alt="" />
+      <img src={items.img} alt={items.name} />
       <div className="detail">
-        <h2>{name}</h2>
-        <li>Memoria RAM: {ram}</li>
-        <li>Almacenamiento: {almacenamiento}</li>
+        <h2>{items.name}</h2>
+        <li>Memoria RAM: {items.ram}</li>
+        <li>Almacenamiento: {items.almacenamiento}</li>
       </div>
       <div className="price">
-        <li>Precio: ${price}</li>
-        <ItemCount stock={stock} initial={1} />
+        <li>Precio: ${items.price}</li>
+        {add ? 
+            <div>¡Añadido!</div>
+            : 
+            <ItemCount item={item} stock={items.stock} initial={1} addItem={addItem}/>
+        }
+        <button className="addToCart">
+          <Link to={"/cart"}>terminar compra</Link>
+        </button>
       </div>
-        <p className="description">{desc}</p>
+      <p className="description">{items.desc}</p>
     </div>
   );
 };

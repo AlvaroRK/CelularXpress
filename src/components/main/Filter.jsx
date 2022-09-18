@@ -1,26 +1,6 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Filter = () => {
-
-  const { id } = useParams();
-  const [item, setItem] = useState({});
-
-  useEffect(() => {
-    setTimeout(() => {
-      getItem();
-    }, 2000);
-  }, []);
-
-  const getItem = () => {
-    const URL = `http://127.0.0.1:5500/public/catalogue.json`;
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.find((i) => i.id == id));
-        setItem(data.find((i) => i.id == id));
-      });
-  };
   return (
     <div className="filterContainer">
       <h2>Filter by:</h2>
@@ -37,10 +17,10 @@ const Filter = () => {
       </div>
       <div>
         <h3>Brand</h3>
-        <Link to={"samsung"}>Samsung</Link>
-        <Link to={"iphone"}>Iphone</Link>
-        <Link to={"motorola"}>Motorola</Link>
-        <Link to={"huawei"}>Huawei</Link>
+        <Link to={"/products/samsung"}>Samsung</Link>
+        <Link to={"/products/iphone"}>Iphone</Link>
+        <Link to={"/products/motorola"}>Motorola</Link>
+        <Link to={"/products/huawei"}>Huawei</Link>
       </div>
     </div>
   );

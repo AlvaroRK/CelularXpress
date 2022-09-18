@@ -1,11 +1,14 @@
 import CategoryItem from "./CategoryItem";
 
 const CategoryItemList = ({slugs}) => {
+  console.log(slugs);
   return (
     <div>
-      {slugs.map((sl) => {
-        return <CategoryItem name={slugs.name} img={slugs.img} price={slugs.price} brand={slugs.brand} />
-      })}
+        {slugs.map((s) => (
+          <div key={s.id}>
+            <h1>{s.name}</h1>
+          </div>
+        ))}
     </div>
   );
 };
