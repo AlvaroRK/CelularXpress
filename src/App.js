@@ -13,8 +13,8 @@ import Services from "./pages/Services";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <CartProvider>
+      <CartProvider>
+        <BrowserRouter>
           <NavBar />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
@@ -29,8 +29,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />
-        </CartProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </CartProvider>
     </>
   );
 }

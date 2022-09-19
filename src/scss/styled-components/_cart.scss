@@ -1,0 +1,33 @@
+.cartContainer {
+  height: calc(90vh - 4rem);
+  @include flex(row, wrap, center, center);
+
+  .cart {
+    @include flex(row, wrap, center, center);
+    background-color: rgb(215, 215, 215);
+    width: 80%;
+    border-radius: 25px;
+
+    .cartItem {
+      @include flex(column, wrap, center, center);
+      background-color: bisque;
+      margin: 0 20px;
+
+      h3 {
+        text-align: center;
+      }
+
+      img {
+        width: 250px;
+      }
+
+      svg {
+        width: 30px;
+      }
+
+      .clearCart {
+        background-color: aqua;
+      }
+    }
+  }
+}

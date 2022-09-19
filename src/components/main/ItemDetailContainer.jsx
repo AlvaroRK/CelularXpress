@@ -4,7 +4,7 @@ import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  const [items, setItems] = useState({});
+  const [item, setItems] = useState({});
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
   };
   return (
     <div className="cardDetailContainer">
-      <ItemDetail items={items} />
+      <ItemDetail item={item} />
     </div>
   );
 };

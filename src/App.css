@@ -375,6 +375,70 @@ body {
   text-align: center;
 }
 
+.cartContainer {
+  height: calc(90vh - 4rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cartContainer .cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(215, 215, 215);
+  width: 80%;
+  border-radius: 25px;
+}
+.cartContainer .cart .cartItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: bisque;
+  margin: 0 20px;
+}
+.cartContainer .cart .cartItem h3 {
+  text-align: center;
+}
+.cartContainer .cart .cartItem img {
+  width: 250px;
+}
+.cartContainer .cart .cartItem svg {
+  width: 30px;
+}
+.cartContainer .cart .cartItem .clearCart {
+  background-color: aqua;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;

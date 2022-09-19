@@ -4,32 +4,41 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount";
 
-const ItemDetail = ({ items, item }) => {
+const ItemDetail = ({ item }) => {
   const [add, setAdd] = useState(false);
-  console.log(setAdd);
 
   const { addItem } = useContext(CartContext);
 
+  const onAdd = () => {
+    setAdd(add);
+  };
+
   return (
     <div className="cardDetail">
-      <img src={items.img} alt={items.name} />
+      <img src={item.img} alt={item.name} />
       <div className="detail">
-        <h2>{items.name}</h2>
-        <li>Memoria RAM: {items.ram}</li>
-        <li>Almacenamiento: {items.almacenamiento}</li>
+        <h2>{item.name}</h2>
+        <li>Memoria RAM: {item.ram}</li>
+        <li>Almacenamiento: {item.almacenamiento}</li>
       </div>
       <div className="price">
-        <li>Precio: ${items.price}</li>
-        {add ? 
-            <div>¡Añadido!</div>
-            : 
-            <ItemCount item={item} stock={items.stock} initial={1} addItem={addItem}/>
-        }
+        <li>Precio: ${item.price}</li>
+        {add ? (
+          <div>¡Añadido!</div>
+        ) : (
+          <ItemCount
+            item={item}
+            stock={item.stock}
+            initial={1}
+            addItem={addItem}
+            onAdd={onAdd}
+          />
+        )}
         <button className="addToCart">
           <Link to={"/cart"}>terminar compra</Link>
         </button>
       </div>
-      <p className="description">{items.desc}</p>
+      <p className="description">{item.desc}</p>
     </div>
   );
 };

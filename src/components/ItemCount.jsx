@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ qty, item, stock, initial, addItem }) => {
+const ItemCount = ({ qty, item, stock, initial, addItem}) => {
   const [counter, setCounter] = useState(initial);
 
   const minusClick = () => {
