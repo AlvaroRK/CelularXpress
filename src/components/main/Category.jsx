@@ -1,30 +1,32 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CategoryItemList from "./CategoryItemList";
 
 const Category = () => {
-  const { slug } = useParams();
-  const [slugs, setSlugs] = useState({});
+  const { brand } = useParams();
+  const [filter, setFilter] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
-      getItem();
+      getProducts();
     }, 2000);
   }, []);
 
-  const getItem = () => {
-    const URL = `http://127.0.0.1:5500/public/catalogue.json`;
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.filter((i) => i.slug === slug));
-        setSlugs(data.filter((i) => i.slug === slug));
-      });
+  const getProducts = () => {
+    const db = getFirestore();
+    const ItemsCollections = collection(db, "items");
+    getDocs(ItemsCollections).then((snapshot) => {
+      const data = snapshot.docs.map((d) => d.data());
+      const item = data.filter((p) => p.brand == brand)
+      console.log(item);
+      setFilter(item);
+    });
   };
   return (
     <div>
       <div className="categoryContainer">
-       <CategoryItemList slugs={slugs}/>
+       <CategoryItemList filter={filter}/>
       </div>
     </div>
   );

@@ -1,14 +1,15 @@
-import CategoryItem from "./CategoryItem";
+import { Link } from "react-router-dom";
+import Item from "./Item";
 
-const CategoryItemList = ({slugs}) => {
-  console.log(slugs);
+const CategoryItemList = ({ filter }) => {
+  console.log(filter);
   return (
-    <div>
-        {slugs.map((s) => (
-          <div key={s.id}>
-            <h1>{s.name}</h1>
-          </div>
-        ))}
+    <div className="cardCategoryContainer">
+      {filter.map((s) => (
+        <Link to={`/products/item/${s.id}`} key={s.id} className="cardCategory">
+        <Item {...s} />
+      </Link>
+      ))}
     </div>
   );
 };

@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 import Filter from "./Filter";
 import ItemList from "./ItemList";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [prod, setProd] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
-      obtenerCatalogo();
-      console.log("productos cargados correctamente");
+      getProducts();
     }, 2000);
-    console.log("cargando...");
   }, []);
 
-  const obtenerCatalogo = () => {
-    const URL = `http://127.0.0.1:5500/public/catalogue.json`;
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setProd(data)
-      });
+  const getProducts = () => {
+    const db = getFirestore();
+    const ItemsCollections = collection(db, "items");
+    getDocs(ItemsCollections).then((snapshot) => {
+      const data = snapshot.docs.map((d) => d.data());
+      console.log(data);
+      setProd(data);
+    });
   };
+
   return (
     <div>
       <div className="cardsContainer">

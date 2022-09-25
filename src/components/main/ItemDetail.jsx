@@ -9,7 +9,7 @@ const ItemDetail = ({ item }) => {
 
   const { addItem } = useContext(CartContext);
 
-  const onAdd = () => {
+  const onAdd = (qty) => {
     setAdd(add);
   };
 
@@ -25,15 +25,9 @@ const ItemDetail = ({ item }) => {
         <li>Precio: ${item.price}</li>
         {add ? (
           <div>¡Añadido!</div>
-        ) : (
-          <ItemCount
-            item={item}
-            stock={item.stock}
-            initial={1}
-            addItem={addItem}
-            onAdd={onAdd}
-          />
-        )}
+          ) : (
+            <ItemCount item={item} stock={item.stock} initial={1} addItem={addItem} onAdd={onAdd}/>
+            )}
         <button className="addToCart">
           <Link to={"/cart"}>terminar compra</Link>
         </button>

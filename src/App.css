@@ -119,6 +119,59 @@ body {
   font-weight: 500;
 }
 
+.cardCategoryContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cardCategoryContainer .cardCategory {
+  width: 30%;
+  margin: 10px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 8px 5px lightgray;
+          box-shadow: 0 0 8px 5px lightgray;
+  border-radius: 10px;
+  font-weight: bold;
+  overflow: hidden;
+}
+.cardCategoryContainer .cardCategory .card-brand {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+.cardCategoryContainer .cardCategory .card-img {
+  width: 100%;
+  height: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 5px;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+.cardCategoryContainer .cardCategory .card-name {
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.cardCategoryContainer .cardCategory .card-price {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cardCategoryContainer .cardCategory .card-stock {
+  text-align: center;
+  background-color: aquamarine;
+}
+
 .filterContainer {
   background-color: rgb(255, 255, 255);
   font-size: 14px;
@@ -375,6 +428,47 @@ body {
   text-align: center;
 }
 
+.carritoVacio {
+  height: calc(90vh - 4rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.carritoVacio .vacioContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 40%;
+  background-color: rgb(215, 215, 215);
+  border-radius: 25px;
+  font-size: 26px;
+}
+.carritoVacio .vacioContainer .a {
+  background-color: aqua;
+  border-radius: 25px;
+  padding: 10px 15px;
+}
+
 .cartContainer {
   height: calc(90vh - 4rem);
   display: -webkit-box;
@@ -408,35 +502,67 @@ body {
   background-color: rgb(215, 215, 215);
   width: 80%;
   border-radius: 25px;
+  overflow: hidden;
 }
 .cartContainer .cart .cartItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 10px;
   background-color: bisque;
-  margin: 0 20px;
+  width: 30%;
+  margin: 10px 20px;
+  border-radius: 25px;
 }
-.cartContainer .cart .cartItem h3 {
-  text-align: center;
+.cartContainer .cart .cartItem .item td {
+  margin: 0 10px;
 }
 .cartContainer .cart .cartItem img {
-  width: 250px;
+  width: 150px;
 }
 .cartContainer .cart .cartItem svg {
   width: 30px;
 }
-.cartContainer .cart .cartItem .clearCart {
+.cartContainer .cart .clearCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: aqua;
+  height: 5rem;
+  width: 100%;
+}
+.cartContainer .cart .clearCart h1 {
+  color: #fff;
+  font-size: 22px;
+}
+.cartContainer .cart .clearCart button {
+  background-color: azure;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 22px;
+}
+.cartContainer .cart .clearCart button:hover {
+  background-color: rgb(32, 207, 114);
 }
 
 .header {

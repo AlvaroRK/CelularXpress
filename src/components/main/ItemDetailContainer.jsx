@@ -1,26 +1,28 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  const [item, setItems] = useState({});
+  const [item, setItem] = useState({});
 
   useEffect(() => {
     setTimeout(() => {
-      getItem();
+      getProducts();
     }, 2000);
   }, []);
 
-  const getItem = () => {
-    const URL = `http://127.0.0.1:5500/public/catalogue.json`;
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.find((i) => i.id == id));
-        setItems(data.find((i) => i.id == id));
-      });
-  };
+  const getProducts = () => {
+  const db = getFirestore();
+  const getItem = collection(db, "items");
+  getDocs(getItem).then((res) => {
+    const data = res.docs.map((p) => p.data());
+    const item = data.find((p) => p.id == id);
+    setItem(item);
+  });
+};
+
   return (
     <div className="cardDetailContainer">
       <ItemDetail item={item} />
@@ -28,3 +30,15 @@ const ItemDetailContainer = () => {
   );
 };
 export default ItemDetailContainer;
+
+
+/* const getProducts = () => {
+  const db = getFirestore();
+  const getItem = collection(db, "items");
+  getDocs(getItem).then((res) => {
+    // const data = res.docs.map((p) => ({id:p.id, ...data()}));
+    // const item = data.find((p) => p.id == id);
+    console.log(res.docs.map((p) => ({ idL: p.id, ...p.data() })));
+    // setItem(item);
+  });
+}; */

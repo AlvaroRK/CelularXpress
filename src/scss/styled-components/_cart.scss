@@ -1,3 +1,23 @@
+.carritoVacio{
+  height: calc(90vh - 4rem);
+  @include flex(column, nowrap, center, center);
+
+  .vacioContainer{
+    @include flex(column, nowrap,space-around, center);
+    width: 80%;
+    height: 40%;
+    background-color: rgb(215, 215, 215);
+    border-radius: 25px;
+    font-size: 26px;
+
+    .a{
+      background-color: aqua;
+      border-radius: 25px;
+      padding: 10px 15px;
+    }
+  }
+}
+
 .cartContainer {
   height: calc(90vh - 4rem);
   @include flex(row, wrap, center, center);
@@ -7,26 +27,52 @@
     background-color: rgb(215, 215, 215);
     width: 80%;
     border-radius: 25px;
+    overflow: hidden;
 
     .cartItem {
-      @include flex(column, wrap, center, center);
+      @include flex(row, nowrap, space-between, center);
+      padding: 0 10px;
       background-color: bisque;
-      margin: 0 20px;
+      width: 30%;
+      margin: 10px 20px;
+      border-radius: 25px;
 
-      h3 {
-        text-align: center;
+      .item{
+        td{
+          margin: 0 10px;
+        }
       }
 
       img {
-        width: 250px;
+        width: 150px;
       }
 
       svg {
         width: 30px;
       }
+    }
 
-      .clearCart {
-        background-color: aqua;
+    .clearCart {
+      @include flex(row, nowrap, space-around, center);
+      background-color: aqua;
+      height: 5rem;
+      width: 100%;
+
+      h1 {
+        color: #fff;
+        font-size: 22px;
+      }
+
+      button {
+        background-color: azure;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 22px;
+
+        &:hover {
+          background-color: rgb(32, 207, 114);
+        }
       }
     }
   }
