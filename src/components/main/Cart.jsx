@@ -1,8 +1,9 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
-const Cart = () => {
+const Cart = ({ form }) => {
   const { items, removeItem, clearItems, totalPrice } = useContext(CartContext);
 
   if (items.length === 0) {
@@ -10,11 +11,33 @@ const Cart = () => {
       <div className="carritoVacio">
         <div className="vacioContainer">
           <h1>el carrito esta vacío</h1>
-          <Link className="a" to="/">Hacer compras</Link>
+          <Link className="a" to="/">
+            Hacer compras
+          </Link>
         </div>
       </div>
     );
   }
+  const order = {
+    buyer: {
+      name: "Pedro",
+      email: "pedro.99@gmail.com",
+      phone: 12332112,
+    },
+    items: items.map((p) => ({
+      id: p.id,
+      name: p.name,
+      price: p.price,
+      qty: p.qty,
+    })),
+    total: totalPrice(),
+  };
+
+  const handleClick = () => {
+    const db = getFirestore();
+    const orderCollections = collection(db, "orders");
+    addDoc(orderCollections, order).then(({ id }) => console.log(id));
+  };
 
   return (
     <div className="cartContainer">
@@ -23,18 +46,10 @@ const Cart = () => {
           <div className="cartItem" key={item.id}>
             <img src={item.img} alt={item.name} />
             <div className="item">
-              <tr>
-                Nombre:<td>{item.name}</td>
-              </tr>
-              <tr>
-                Cantidad:<td>{item.qty}</td>
-              </tr>
-              <tr>
-                Precio:<td>{item.price}</td>
-              </tr>
-              <tr>
-                Subtotal:<td>{item.price * item.qty}</td>
-              </tr>
+              <p>Nombre: {item.name}</p>
+              <p>Cantidad: {item.qty}</p>
+              <p>Precio: {item.price}</p>
+              <p>Subtotal: {item.price * item.qty}</p>
             </div>
             <button
               onClick={() => {
@@ -50,6 +65,7 @@ const Cart = () => {
 
         <div className="clearCart">
           <h1>Total price: {totalPrice()}</h1>
+          <button onClick={handleClick}>Generar orden</button>
           <button
             onClick={() => {
               clearItems();

@@ -30,15 +30,3 @@ const ItemDetailContainer = () => {
   );
 };
 export default ItemDetailContainer;
-
-
-/* const getProducts = () => {
-  const db = getFirestore();
-  const getItem = collection(db, "items");
-  getDocs(getItem).then((res) => {
-    // const data = res.docs.map((p) => ({id:p.id, ...data()}));
-    // const item = data.find((p) => p.id == id);
-    console.log(res.docs.map((p) => ({ idL: p.id, ...p.data() })));
-    // setItem(item);
-  });
-}; */

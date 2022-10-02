@@ -12,7 +12,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const addItem = (item, qty) => {
-    console.log(`has comprado ${item.qty} ${item.name}`);
     isInCart(item.id)
       ? setItems(items.map((prod) => {
             if (prod.id == item.id) {

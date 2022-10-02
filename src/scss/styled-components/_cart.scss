@@ -20,7 +20,7 @@
 
 .cartContainer {
   height: calc(90vh - 4rem);
-  @include flex(row, wrap, center, center);
+  @include flex(column, wrap, center, center);
 
   .cart {
     @include flex(row, wrap, center, center);
@@ -34,6 +34,7 @@
       padding: 0 10px;
       background-color: bisque;
       width: 30%;
+      height: 200px;
       margin: 10px 20px;
       border-radius: 25px;
 
