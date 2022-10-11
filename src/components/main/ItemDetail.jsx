@@ -18,8 +18,8 @@ const ItemDetail = ({ item }) => {
       <img src={item.img} alt={item.name} />
       <div className="detail">
         <h2>{item.name}</h2>
-        <li>Memoria RAM: {item.ram}</li>
-        <li>Almacenamiento: {item.almacenamiento}</li>
+        <li>Memory RAM: {item.ram}</li>
+        <li>Storage: {item.almacenamiento}</li>
       </div>
       <div className="price">
         <li>Precio: ${item.price}</li>
@@ -29,7 +29,7 @@ const ItemDetail = ({ item }) => {
             <ItemCount item={item} stock={item.stock} initial={1} addItem={addItem} onAdd={onAdd}/>
             )}
         <button className="addToCart">
-          <Link to={"/cart"}>terminar compra</Link>
+          <Link to={"/cart"}>Finish buying</Link>
         </button>
       </div>
       <p className="description">{item.desc}</p>

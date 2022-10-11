@@ -1,5 +1,5 @@
 .carritoVacio{
-  height: calc(90vh - 4rem);
+  height: 57vh;
   @include flex(column, nowrap, center, center);
 
   .vacioContainer{
@@ -19,7 +19,7 @@
 }
 
 .cartContainer {
-  height: calc(90vh - 4rem);
+  height: 57vh;
   @include flex(column, wrap, center, center);
 
   .cart {

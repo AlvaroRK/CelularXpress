@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Item from "./Item";
 
 const CategoryItemList = ({ filter }) => {
-  console.log(filter);
   return (
     <div className="cardCategoryContainer">
       {filter.map((s) => (

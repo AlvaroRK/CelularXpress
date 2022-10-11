@@ -19,7 +19,6 @@ const Category = () => {
     getDocs(ItemsCollections).then((snapshot) => {
       const data = snapshot.docs.map((d) => d.data());
       const item = data.filter((p) => p.brand == brand)
-      console.log(item);
       setFilter(item);
     });
   };

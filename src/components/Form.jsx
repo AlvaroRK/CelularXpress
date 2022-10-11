@@ -5,7 +5,7 @@ import Cart from "./main/Cart";
 const Form = () => {
   const { register, handleSubmit } = useForm();
 
-  const [form, setForm] = useState()
+  const [form, setForm] = useState();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -13,19 +13,20 @@ const Form = () => {
   };
   return (
     <div>
-      <h2>Formulario</h2>
+      <h2>Step 1</h2>
+      <div className="form">
+      <h2>Form</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+        <div className="inputBox">
           <label>Name</label>
           <input
             type="text"
             {...register("name", {
               required: true,
-              maxLength: 20,
             })}
           />
         </div>
-        <div>
+        <div className="inputBox">
           <label>Email</label>
           <input
             type="text"
@@ -34,7 +35,7 @@ const Form = () => {
             })}
           />
         </div>
-        <div>
+        <div className="inputBox">
           <label>Phone</label>
           <input
             type="number"
@@ -43,8 +44,9 @@ const Form = () => {
             })}
           />
         </div>
-        <input type="submit" value="Send" />
+        <input type="submit" className="buttonSend" value="Send"/>
       </form>
+      </div>
       <Cart form={form}></Cart>
     </div>
   );

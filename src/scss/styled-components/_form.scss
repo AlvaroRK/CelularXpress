@@ -1,0 +1,36 @@
+h2{
+    text-align: center
+}
+.form{
+    @include flex(column, nowrap, center, center);
+    form{
+        @include flex(row, nowrap, center, center);
+        background-color: rgb(215, 215, 215);
+        width: 50%;
+        height: 200px;
+        border-radius: 25px;
+
+        .inputBox{
+            margin:10px;
+            background-color: bisque;
+            label{
+                font-size: 20px;
+                text-align: center;
+            }
+            input {
+                outline: none;
+                border: 1px solid grey;
+            }
+        }
+
+        .buttonSend{
+            background-color: aqua;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            &:hover{
+                background-color: aquamarine;
+            }
+        }
+    }
+}

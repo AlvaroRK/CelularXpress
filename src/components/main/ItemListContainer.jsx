@@ -17,7 +17,6 @@ const ItemListContainer = () => {
     const ItemsCollections = collection(db, "items");
     getDocs(ItemsCollections).then((snapshot) => {
       const data = snapshot.docs.map((d) => d.data());
-      console.log(data);
       setProd(data);
     });
   };

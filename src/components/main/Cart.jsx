@@ -1,6 +1,7 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { CartContext } from "../../context/CartContext";
 
 const Cart = ({ form }) => {
@@ -10,46 +11,66 @@ const Cart = ({ form }) => {
     return (
       <div className="carritoVacio">
         <div className="vacioContainer">
-          <h1>el carrito esta vacío</h1>
+          <h1>The cart is empty</h1>
           <Link className="a" to="/">
-            Hacer compras
+            Go shopping
           </Link>
         </div>
       </div>
     );
   }
-  const order = {
-    buyer: {
-      name: "Pedro",
-      email: "pedro.99@gmail.com",
-      phone: 12332112,
-    },
-    items: items.map((p) => ({
-      id: p.id,
-      name: p.name,
-      price: p.price,
-      qty: p.qty,
-    })),
-    total: totalPrice(),
-  };
 
   const handleClick = () => {
+    const order = {
+      buyer: {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+      },
+      items: items.map((p) => ({
+        id: p.id,
+        name: p.name,
+        price: p.price,
+        qty: p.qty,
+      })),
+      total: totalPrice(),
+    };
+
     const db = getFirestore();
     const orderCollections = collection(db, "orders");
     addDoc(orderCollections, order).then(({ id }) => console.log(id));
+
+    if (order != null) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+      Toast.fire({
+        icon: "success",
+        title: `Orden generada correctamente`,
+      });
+    }
   };
 
   return (
     <div className="cartContainer">
+      <h2>Step 2</h2>
+      <h2>Generate order</h2>
       <div className="cart">
         {items.map((item) => (
           <div className="cartItem" key={item.id}>
             <img src={item.img} alt={item.name} />
             <div className="item">
-              <p>Nombre: {item.name}</p>
-              <p>Cantidad: {item.qty}</p>
-              <p>Precio: {item.price}</p>
-              <p>Subtotal: {item.price * item.qty}</p>
+              <p>Name: {item.name}</p>
+              <p>Amount: {item.qty}</p>
+              <p>Price: {item.price}</p>
+              <p>Subtotal: ${item.price * item.qty}</p>
             </div>
             <button
               onClick={() => {
@@ -65,7 +86,7 @@ const Cart = ({ form }) => {
 
         <div className="clearCart">
           <h1>Total price: {totalPrice()}</h1>
-          <button onClick={handleClick}>Generar orden</button>
+          <button onClick={handleClick}>Generate order</button>
           <button
             onClick={() => {
               clearItems();

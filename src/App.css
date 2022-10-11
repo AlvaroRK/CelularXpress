@@ -420,7 +420,7 @@ body {
 }
 
 .carritoVacio {
-  height: calc(90vh - 4rem);
+  height: 57vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -461,7 +461,7 @@ body {
 }
 
 .cartContainer {
-  height: calc(90vh - 4rem);
+  height: 57vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -555,6 +555,66 @@ body {
 }
 .cartContainer .cart .clearCart button:hover {
   background-color: rgb(32, 207, 114);
+}
+
+h2 {
+  text-align: center;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(215, 215, 215);
+  width: 50%;
+  height: 200px;
+  border-radius: 25px;
+}
+.form form .inputBox {
+  margin: 10px;
+  background-color: bisque;
+}
+.form form .inputBox label {
+  font-size: 20px;
+  text-align: center;
+}
+.form form .inputBox input {
+  outline: none;
+  border: 1px solid grey;
+}
+.form form .buttonSend {
+  background-color: aqua;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.form form .buttonSend:hover {
+  background-color: aquamarine;
 }
 
 .header {
